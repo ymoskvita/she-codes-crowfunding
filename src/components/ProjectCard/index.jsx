@@ -10,8 +10,8 @@ function ProjectCard(props) {
                 <img src={projectData.image} alt="" />
                 <h2>{projectData.title}</h2>
                 <p>Short description of the project goes here</p>
-                <a href="#" class="button">Support This Project</a>
             </Link>
+            <Link to={'/'} className="button">Support This Project</Link>
         </div>
     )
 };
