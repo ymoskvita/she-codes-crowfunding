@@ -23,10 +23,10 @@ function Nav() {
                     </li>
                     <li>
                         <NavLink
-                            to="/project"
+                            to="/projects"
                             style={({ isActive }) => isActive ? activeStyle : undefined}
                         >
-                            Project
+                            Projects
                         </NavLink>
                     </li>
                     {isLogIn && <li>Hi, {username}</li>}

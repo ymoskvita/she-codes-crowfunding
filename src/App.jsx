@@ -4,7 +4,9 @@ import './App.css'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Nav from './components/Nav';
 import HomePage from './pages/HomePage';
+import ProjectsPage from './pages/ProjectsPage';
 import ProjectPage from './pages/ProjectPage';
+import CreateProjectPage from './pages/CreateProjectPage';
 import LoginPage from './pages/LoginPage';
 
 const HeaderLayout = () => {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/projects",
+        element: <ProjectsPage />,
+      },
+      {
+        path: "/create-project",
+        element: <CreateProjectPage />,
       },
       {
         path: "/project/:id",
