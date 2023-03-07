@@ -8,6 +8,8 @@ import ProjectsPage from './pages/ProjectsPage';
 import ProjectPage from './pages/ProjectPage';
 import CreateProjectPage from './pages/CreateProjectPage';
 import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import PledgePage from './pages/PledgePage';
 
 const HeaderLayout = () => {
   return (
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
+      },
+      {
+        path: "/signup",
+        element: <SignUpPage />,
+      },
+      {
+        path: "/pledges/:id",
+        element: <PledgePage />,
       }
     ]
   }

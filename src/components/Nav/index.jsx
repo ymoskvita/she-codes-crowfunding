@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 
 function Nav() {
     let activeStyle = {
@@ -8,6 +8,12 @@ function Nav() {
 
     const isLogIn = window.localStorage.getItem("token") !== null;
     const username = window.localStorage.getItem("username");
+    const navigate = useNavigate();
+
+    const onLogOut = () => {
+        localStorage.clear();
+        navigate('/');
+    }
 
     return (
         <header>
@@ -29,27 +35,14 @@ function Nav() {
                             Projects
                         </NavLink>
                     </li>
-                    {isLogIn && <li>Hi, {username}</li>}
-                    {isLogIn && <li><NavLink
-                        to="/"
-                        style={({ isActive }) => isActive ? activeStyle : undefined}
-                    >
-                        Log out
-                    </NavLink></li>}
-                    {!isLogIn && <li><NavLink
-                        to="/login"
-                        style={({ isActive }) => isActive ? activeStyle : undefined}
-                    >
-                        Login
-                    </NavLink></li>}
-                    {!isLogIn && <li><NavLink
-                        to="/"
-                        style={({ isActive }) => isActive ? activeStyle : undefined}
-                    >
-                        Sign up
-                    </NavLink></li>}
                 </ul>
             </nav>
+            <div className="nav-login">
+                {isLogIn && <p>Hi, {username}</p>}
+                {isLogIn && <Link to="/" onClick={onLogOut}>Log out</Link>}
+                {!isLogIn && <Link to="/login">Log in</Link>}
+                {!isLogIn && <Link to="/signup">Sign up </Link>}
+            </div>
         </header>
     )
 };

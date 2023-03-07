@@ -43,25 +43,32 @@ function CreateProjectForm() {
     }
 
     return (
-        <form action="">
-            <div>
-                <label htmlFor="title">Title:</label>
-                <input onChange={handleChange} type="text" id="title" placeholder="Enter title" />
-            </div>
-            <div>
-                <label htmlFor="description">Description:</label>
-                <input onChange={handleChange} type="text" id="description" placeholder="Enter description" />
-            </div>
-            <div>
-                <label htmlFor="goal">Goal:</label>
-                <input onChange={handleChange} type="text" id="goal" placeholder="Enter goal" />
-            </div>
-            <div>
-                <label htmlFor="image">Image:</label>
-                <input onChange={handleChange} type="text" id="image" placeholder="Enter image URL" />
-            </div>
-            <button type="submit" className="button" onClick={handleSubmit}>Create</button>
-        </form>
+        <>
+            <h1>Create New Project</h1>
+            <form action="">
+                <div>
+                    <label htmlFor="title">Title:</label>
+                    <input onChange={handleChange} type="text" id="title" placeholder="Enter title" />
+                </div>
+                <div>
+                    <label htmlFor="description">Description:</label>
+                    <input onChange={handleChange} type="text" id="description" placeholder="Enter description" />
+                </div>
+                <div>
+                    <label htmlFor="goal">Goal:</label>
+                    <input onChange={handleChange} type="text" id="goal" placeholder="Enter goal" />
+                </div>
+                <div>
+                    <label htmlFor="image">Image:</label>
+                    <input onChange={handleChange} type="text" id="image" placeholder="Enter image URL" />
+                </div>
+                <div>
+                    <label htmlFor="date_created">Date: </label>
+                    <input type="date" id="date_created" name="date_created" />
+                </div>
+                <button type="submit" className="button" onClick={handleSubmit}>Create</button>
+            </form>
+        </>
     )
 };
 

@@ -11,7 +11,7 @@ function ProjectCard(props) {
                 <h2>{projectData.title}</h2>
                 <p>Short description of the project goes here</p>
             </Link>
-            <Link to={'/'} className="button">Support This Project</Link>
+            <Link to={`/pledges/${projectData.id}`} className="button">Support This Project</Link>
         </div>
     )
 };
