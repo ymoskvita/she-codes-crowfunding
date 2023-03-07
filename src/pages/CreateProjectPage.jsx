@@ -8,7 +8,7 @@ function CreateProjectPage() {
         <main className="container">
             {!token ?
                 <div className="hero">
-                    <h1>Do you have acount? </h1>
+                    <h1>Do you have account? </h1>
                     <Link to="/login" className="button">Log in</Link>
                     <Link to="/signup" className="button" >Sign up </Link>
                 </div>
